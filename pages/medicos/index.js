@@ -66,7 +66,7 @@ console.log(medicos)
             <th>{item.nome}</th>
             <th>{item.cpf}</th>
             <th>{item.matricula}</th>
-            <th>{item.salario}</th>
+            <th>{item.id}</th>
             <th>{item.email}</th>
             <th>{item.telefone}</th>
             <th>{item.cep}</th>

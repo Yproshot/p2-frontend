@@ -57,7 +57,7 @@ const form = () => {
 
                 <Form.Group className="mb-3" controlId="crm">
                     <Form.Label>CRM:</Form.Label>
-                    <Form.Control type="text" {...register('crm', validatorCadastro.crm)} />
+                    <Form.Control mask='999999-AAA/AA' type="text" {...register('crm', validatorCadastro.crm)} />
                 </Form.Group>
                 {errors.crm && (
                     <span className="error-message bg-dark text-danger">

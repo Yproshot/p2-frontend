@@ -55,9 +55,9 @@ const index = () => {
                 {' '}
                 <FaRegTrashAlt onClick={()=>excluir(item.id)} className="text-danger" />
               </td>
-              <td>{item.nome}</td>
-              <td>{item.duracao}</td>
-              <td>{item.modalidade}</td>
+              <td>{item.exame}</td>
+              <td>{item.medicoId}</td>
+              <td>{item.pacienteId}</td>
             </tr>
           ))}
         </tbody>

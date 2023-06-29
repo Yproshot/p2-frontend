@@ -31,7 +31,7 @@ const form = () => {
     return (
         <Pagina titulo='Consultas'>
                        <Form>
-                       <Form.Group className="mb-3" controlId="motivo">
+                                      <Form.Group className="mb-3" controlId="motivo">
                     <Form.Label>Motivo da consulta:</Form.Label>
                     <Form.Control type="text" {...register('motivo', validatorCadastro.motivo)} />
                 </Form.Group>
@@ -44,7 +44,7 @@ const form = () => {
 
                 <Form.Group className="mb-3" controlId="pacienteid">
                     <Form.Label>Id do paciente:</Form.Label>
-                    <Form.Control  type="text" {...register('pacienteid', validatorCadastro.pacienteid)}
+                    <Form.Control type="text" {...register('pacienteid', validatorCadastro.pacienteid)}
                     onChange={handlechange} />
                 </Form.Group>
                 {errors.pacienteid && (

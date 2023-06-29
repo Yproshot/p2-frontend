@@ -19,7 +19,7 @@ const validatorCadastro = {
     cpf: {
       required: "Campo obrigatório!",
       maxLength: {
-        value: 11,
+        value: 14,
         message: "Máximo: 11 caracteres!",
       },
       pattern: {
@@ -65,19 +65,11 @@ const validatorCadastro = {
       },
     },
   
-    cep: {
-      minLength: {
-        value: 9,
-        message: "O CEP possui 8 digitos não se esqueça do "-" (xxxxx-xxx) !",
-      },
-      maxLength: {
-        value: 9,
-        message: "O CEP possui 8 digitos não se esqueça do "-" (xxxxx-xxx) !",
-      },
-      pattern: {
-        value: /^[0-9]{5}-[0-9]{3}$/,
-        message: "Digite apenas números!",
-      },
+    crm: {maxLength:{
+          value: 12,
+          message:"o crm é composto por 6 digitos mais a sigla 'crm' mais a sigla do estado ",
+    }
+
     },
   
     logradouro: {

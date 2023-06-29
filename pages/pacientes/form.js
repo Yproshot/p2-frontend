@@ -44,7 +44,7 @@ const form = () => {
 
                 <Form.Group className="mb-3" controlId="cpf">
                     <Form.Label>CPF:</Form.Label>
-                    <Form.Control mask='999.999.999-99' type="text" {...register('cpf', validatorCadastro.cpf)}
+                    <Form.Control  mask='999.999.999-99' type="text" {...register('cpf', validatorCadastro.cpf)}
                     onChange={handlechange} />
                 </Form.Group>
                 {errors.cpf && (
@@ -53,19 +53,19 @@ const form = () => {
                     </span>
                   )}
 
-                <Form.Group className="mb-3" controlId="matricula">
-                    <Form.Label>Matricula:</Form.Label>
-                    <Form.Control type="text" {...register('matricula', validatorCadastro.matricula)} />
+                <Form.Group className="mb-3" controlId="sexo">
+                    <Form.Label>Sexo:</Form.Label>
+                    <Form.Control type="text" {...register('sexo', validatorCadastro.sexo)} />
                 </Form.Group>
-                {errors.matricula && (
+                {errors.sexo && (
                     <span className="error-message bg-dark text-danger">
-                      {errors.matricula.message}
+                      {errors.sexo.message}
                     </span>
                   )}
 
                 <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email:</Form.Label>
-                    <Form.Control type="email" {...register('email', validatorCadastro.email)} />
+                    <Form.Control type="text" {...register('email', validatorCadastro.email)} />
                 </Form.Group>
                 {errors.email && (
                     <span className="error-message bg-dark text-danger">

@@ -55,23 +55,13 @@ const form = () => {
                     </span>
                   )}
 
-                <Form.Group className="mb-3" controlId="matricula">
-                    <Form.Label>Matricula:</Form.Label>
-                    <Form.Control type="text" {...register('matricula', validatorCadastro.matricula)} />
+                <Form.Group className="mb-3" controlId="crm">
+                    <Form.Label>CRM:</Form.Label>
+                    <Form.Control type="text" {...register('crm', validatorCadastro.crm)} />
                 </Form.Group>
-                {errors.matricula && (
+                {errors.crm && (
                     <span className="error-message bg-dark text-danger">
-                      {errors.matricula.message}
-                    </span>
-                  )}
-                
-                <Form.Group className="mb-3" controlId="salario">
-                    <Form.Label>Salario:</Form.Label>
-                    <Form.Control type="text" {...register('salario', validatorCadastro.salario)} />
-                </Form.Group>
-                {errors.salario && (
-                    <span className="error-message bg-dark text-danger">
-                      {errors.salario.message}
+                      {errors.crm.message}
                     </span>
                   )}
                 
@@ -99,8 +89,8 @@ const form = () => {
 
                 <Form.Group className="mb-3" controlId="cep">
                     <Form.Label>CEP:</Form.Label>
-                    <Form.Control mask='99.999-999' type="text" {...register('cep', validatorCadastro.cep)}
-                    onChange={handlechange} />
+                    <Form.Control mask='99.999-999' type="text" {...register('cep', validatorCadastro.cep)} 
+                    onChange={handlechange}/>
                 </Form.Group>
                 {errors.cep && (
                     <span className="error-message bg-dark text-danger">

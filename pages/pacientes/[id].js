@@ -66,13 +66,13 @@ const form = () => {
                     </span>
                   )}
 
-                <Form.Group className="mb-3" controlId="matricula">
-                    <Form.Label>Matricula:</Form.Label>
-                    <Form.Control type="text" {...register('matricula', validatorCadastro.matricula)} />
+                <Form.Group className="mb-3" controlId="sexo">
+                    <Form.Label>Sexo:</Form.Label>
+                    <Form.Control type="text" {...register('sexo', validatorCadastro.sexo)} />
                 </Form.Group>
-                {errors.matricula && (
+                {errors.sexo && (
                     <span className="error-message bg-dark text-danger">
-                      {errors.matricula.message}
+                      {errors.sexo.message}
                     </span>
                   )}
 

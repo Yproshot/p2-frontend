@@ -23,7 +23,7 @@ const form = () => {
     return (
         <Pagina titulo='Medicamentos'>
             <Form>
-                <Form.Group className="mb-3" controlId="nome">
+            <Form.Group className="mb-3" controlId="nome">
                     <Form.Label>Nome:</Form.Label>
                     <Form.Control type="text" {...register('nome', validatorCadastro.nome)} />
                 </Form.Group>
@@ -34,15 +34,46 @@ const form = () => {
                   )}
 
 
-                <Form.Group className="mb-3" controlId="curso">
-                    <Form.Label>Curso:</Form.Label>
-                    <Form.Control type="text" {...register('curso', validatorCadastro.curso)} />
+                <Form.Group className="mb-3" controlId="codigo">
+                    <Form.Label>Codigo:</Form.Label>
+                    <Form.Control type="text" {...register('codigo', validatorCadastro.codigo)} />
                 </Form.Group>
-                {errors.curso && (
+                {errors.codigo && (
                     <span className="error-message bg-dark text-danger">
-                      {errors.curso.message}
+                      {errors.codigo.message}
                     </span>
                   )}
+
+                <Form.Group className="mb-3" controlId="dosagem">
+                    <Form.Label>Dosagem:</Form.Label>
+                    <Form.Control type="text" {...register('dosagem', validatorCadastro.dosagem)} />
+                </Form.Group>
+                {errors.dosagem && (
+                    <span className="error-message bg-dark text-danger">
+                      {errors.dosagem.message}
+                    </span>
+                  )}
+
+                <Form.Group className="mb-3" controlId="validade">
+                    <Form.Label>Validade:</Form.Label>
+                    <Form.Control type="text" {...register('validade', validatorCadastro.validade)} />
+                </Form.Group>
+                {errors.validade && (
+                    <span className="error-message bg-dark text-danger">
+                      {errors.validade.message}
+                    </span>
+                  )}
+
+                <Form.Group className="mb-3" controlId="quantidade">
+                    <Form.Label>Quantidade:</Form.Label>
+                    <Form.Control type="text" {...register('quantidade', validatorCadastro.quantidade)} />
+                </Form.Group>
+                {errors.quantidade && (
+                    <span className="error-message bg-dark text-danger">
+                      {errors.quantidade.message}
+                    </span>
+                  )}
+
 
 
                 <div className='text-center'>

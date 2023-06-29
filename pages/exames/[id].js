@@ -36,35 +36,65 @@ const form = () => {
   return (
     <Pagina titulo="Exames">
             <Form>
-                <Form.Group className="mb-3" controlId="nome">
-                    <Form.Label>Nome:</Form.Label>
-                    <Form.Control type="text" {...register('nome', validatorCadastro.nome)} />
+                <Form.Group className="mb-3" controlId="exame">
+                    <Form.Label>Tipo do Exame:</Form.Label>
+                    <Form.Control type="text" {...register('exame', validatorCadastro.exame)} />
                 </Form.Group>
-                {errors.nome && (
+                {errors.exame && (
                     <span className="error-message bg-dark text-danger">
-                      {errors.nome.message}
+                      {errors.exame.message}
                     </span>
                   )}
 
 
-                <Form.Group className="mb-3" controlId="duracao">
-                    <Form.Label>Duração:</Form.Label>
-                    <Form.Control type="text" {...register('duracao', validatorCadastro.duracao)} />
+                <Form.Group className="mb-3" controlId="medicos.id">
+                    <Form.Label>Id do Medico:</Form.Label>
+                    <Form.Control type="text" {...register('medicos.id', validatorCadastro.medicos.id)} />
                 </Form.Group>
-                {errors.duracao && (
+                {errors.medicos.id && (
                     <span className="error-message bg-dark text-danger">
-                      {errors.duracao.message}
+                      {errors.medicos.id.message}
                     </span>
                   )}
 
 
-                <Form.Group className="mb-3" controlId="modalidade">
-                    <Form.Label>Modalidade:</Form.Label>
-                    <Form.Control type="text" {...register('modalidade', validatorCadastro.modalidade)} />
+                <Form.Group className="mb-3" controlId="pacientes.id">
+                    <Form.Label>Id do Paciente:</Form.Label>
+                    <Form.Control type="text" {...register('pacientes.id', validatorCadastro.pacientes.id)} />
                 </Form.Group>
-                {errors.modalidade && (
+                {errors.pacientes.id && (
                     <span className="error-message bg-dark text-danger">
-                      {errors.modalidade.message}
+                      {errors.pacientes.id.message}
+                    </span>
+                  )}
+
+                <Form.Group className="mb-3" controlId="dataInicio">
+                    <Form.Label>Data do exame:</Form.Label>
+                    <Form.Control type="text" {...register('dataInicio', validatorCadastro.dataInicio)}/>
+                </Form.Group>
+                {errors.dataInicio && (
+                    <span className="error-message bg-dark text-danger">
+                      {errors.dataInicio.message}
+                    </span>
+                  )}
+
+                <Form.Group className="mb-3" controlId="dataFim">
+                    <Form.Label>Data do resultado:</Form.Label>
+                    <Form.Control type="text" {...register('dataFim', validatorCadastro.dataFim)}/>
+                </Form.Group>
+                {errors.dataFim && (
+                    <span className="error-message bg-dark text-danger">
+                      {errors.dataFim.message}
+                    </span>
+                  )}
+
+                <Form.Group className="mb-3" controlId="observacao">
+                    <Form.Label>Observação:</Form.Label>
+                    <Form.Control as="textarea" rows={5} type="text" {...register('observacao', validatorCadastro.observacao)}/>
+                </Form.Group>
+                {errors.observacao && (
+                    <span className="error-message bg-dark text-danger">
+                      {errors.observacao.message}
                     </span>
                   )}
 

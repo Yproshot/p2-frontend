@@ -8,6 +8,7 @@ import { BsSave } from "react-icons/bs"
 import { AiOutlineRollback } from "react-icons/ai"
 import axios from "axios";
 import validatorCadastro from "@/validators/validatorsCadastro";
+import { mask } from "remask";
 
 const form = () => {
 
@@ -33,57 +34,78 @@ const form = () => {
 
   }
 
+  function handlechange(event){
+    const name = event.target.name
+    const valor = event.target.value
+    const mascara = event.target.getAttribute('mask')
+
+    setValue(name, mask(valor, mascara));
+  }
+
   return (
     <Pagina titulo="Medicamentos">
-            <Form>
-                <Form.Group className="mb-3" controlId="nome">
-                    <Form.Label>Nome:</Form.Label>
-                    <Form.Control type="text" {...register('nome', validatorCadastro.nome)} />
+              <Form>
+                                      <Form.Group className="mb-3" controlId="motivo">
+                    <Form.Label>Motivo da consulta:</Form.Label>
+                    <Form.Control type="text" {...register('motivo', validatorCadastro.motivo)} />
                 </Form.Group>
-                {errors.nome && (
+                {errors.motivo && (
                     <span className="error-message bg-dark text-danger">
-                      {errors.nome.message}
+                      {errors.motivo.message}
                     </span>
                   )}
 
 
-                <Form.Group className="mb-3" controlId="codigo">
-                    <Form.Label>Codigo:</Form.Label>
-                    <Form.Control type="text" {...register('codigo', validatorCadastro.codigo)} />
+                <Form.Group className="mb-3" controlId="pacienteid">
+                    <Form.Label>Id do paciente:</Form.Label>
+                    <Form.Control type="text" {...register('pacienteid', validatorCadastro.pacienteid)}
+                     />
                 </Form.Group>
-                {errors.codigo && (
+                {errors.pacienteid && (
                     <span className="error-message bg-dark text-danger">
-                      {errors.codigo.message}
+                      {errors.pacienteid.message}
                     </span>
                   )}
 
-                <Form.Group className="mb-3" controlId="dosagem">
-                    <Form.Label>Dosagem:</Form.Label>
-                    <Form.Control type="text" {...register('dosagem', validatorCadastro.dosagem)} />
+                <Form.Group className="mb-3" controlId="medicoid">
+                    <Form.Label>Id do Medico:</Form.Label>
+                    <Form.Control type="text" {...register('medicoid', validatorCadastro.medicoid)} />
                 </Form.Group>
-                {errors.dosagem && (
+                {errors.medicoid && (
                     <span className="error-message bg-dark text-danger">
-                      {errors.dosagem.message}
+                      {errors.medicoid.message}
                     </span>
                   )}
 
-                <Form.Group className="mb-3" controlId="validade">
-                    <Form.Label>Validade:</Form.Label>
-                    <Form.Control type="text" {...register('validade', validatorCadastro.validade)} />
+                <Form.Group className="mb-3" controlId="datainicio">
+                    <Form.Label>Data da consulta:</Form.Label>
+                    <Form.Control mask='99/99/9999' type="text" {...register('datainicio', validatorCadastro.datainicio)}  onChange={handlechange}/>
                 </Form.Group>
-                {errors.validade && (
+                {errors.datainicio && (
                     <span className="error-message bg-dark text-danger">
-                      {errors.validade.message}
+                      {errors.datainicio.message}
+                    </span>
+                  )}
+                
+                <Form.Group className="mb-3" controlId="horario">
+                    <Form.Label>Horario:</Form.Label>
+                    <Form.Control mask='99:99' type="text" {...register('horario', validatorCadastro.horario)}
+                    onChange={handlechange} />
+                </Form.Group>
+                {errors.horario && (
+                    <span className="error-message bg-dark text-danger">
+                      {errors.horario.message}
                     </span>
                   )}
 
-                <Form.Group className="mb-3" controlId="quantidade">
-                    <Form.Label>Quantidade:</Form.Label>
-                    <Form.Control type="text" {...register('quantidade', validatorCadastro.quantidade)} />
+                <Form.Group className="mb-3" controlId="observacao">
+                    <Form.Label>Observação:</Form.Label>
+                    <Form.Control as="textarea" rows={5} type="text" {...register('observacao', validatorCadastro.observacao)} 
+                    />
                 </Form.Group>
-                {errors.quantidade && (
+                {errors.observacao && (
                     <span className="error-message bg-dark text-danger">
-                      {errors.quantidade.message}
+                      {errors.observacao.message}
                     </span>
                   )}
 

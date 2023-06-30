@@ -25,7 +25,7 @@ const form = () => {
       const valor = event.target.value
       const mascara = event.target.getAttribute('mask')
 
-      setValue(name, mask(valor, mascara));
+      setValue(name, mask(valor, mascara))
     }
 
     function meu_callback(conteudo) {

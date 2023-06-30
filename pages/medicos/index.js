@@ -41,16 +41,11 @@ console.log(medicos)
           <tr>
             <th>Apagar</th>
             <th>Nome</th>
-            <th>CPF</th>
-            <th>Matricula</th>
-            <th>Salario</th>
-            <th>Email</th>
-            <th>Telefone</th>
-            <th>CEP</th>
-            <th>Logadouro</th>
-            <th>Complemento</th>
-            <th>Num.</th>
-            <th>Bairro</th>
+            <th>id</th>
+            <th>telefone</th>
+            <th>CRM</th>
+            <th>email</th>
+            <th>cep</th>
           </tr>
         </thead>
         <tbody>
@@ -63,17 +58,12 @@ console.log(medicos)
                 {' '}
                 <FaRegTrashAlt onClick={()=>excluir(item.id)} className="text-danger" />
               </td>
-            <th>{item.nome}</th>
-            <th>{item.cpf}</th>
-            <th>{item.matricula}</th>
-            <th>{item.id}</th>
-            <th>{item.email}</th>
-            <th>{item.telefone}</th>
-            <th>{item.cep}</th>
-            <th>{item.logadouro}</th>
-            <th>{item.complemento}</th>
-            <th>{item.numero}</th>
-            <th>{item.bairro}</th>
+              <td>{item.nome}</td>
+              <td>{item.id}</td>
+              <td>{item.telefone}</td>
+              <td>{item.crm}</td>
+              <td>{item.email}</td>
+              <td>{item.cep}</td>
             </tr>
           ))}
         </tbody>

@@ -33,20 +33,41 @@ const index = () => {
   return (
     <Pagina titulo="Consultas">
 
-      <Link href="/consultas/form" className="mb-2 btn btn-primary">
+<Link href="/consultas/form" className="mb-2 btn btn-primary">
         <AiFillPlusCircle /> Novo
       </Link>
-      {consultas.map(item => (
-      <Accordion defaultActiveKey="0" flush>
-      <Accordion.Item eventKey="0">
-        <Accordion.Header>{item.id}{"  "}{item.motivo}</Accordion.Header>
-        <Accordion.Body>
-          <p>Id do paciente: {item.pacienteId}</p>
-          <p>Id do medico: {item.medicoId}</p>
-        </Accordion.Body>
-        </Accordion.Item>
-        </Accordion>
-       ))}
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>Apagar</th>
+            <th>motivo</th>
+            <th>Id do Medico</th>
+            <th>Id do Paciente</th>
+            <th>Data da consulta</th>
+            <th>Horario</th>
+            <th>observação</th>
+          </tr>
+        </thead>
+        <tbody>
+          {consultas.map(item => (
+            <tr key={item.id}>
+              <td>
+                <Link href={'/consultas/' + item.id}> 
+                <BiEditAlt title='Alterar' className="text-primary" />
+                </Link>
+                {' '}
+                <FaRegTrashAlt onClick={()=>excluir(item.id)} className="text-danger" />
+              </td>
+              <td>{item.motivo}</td>
+              <td>{item.medicoid}</td>
+              <td>{item.pacienteid}</td>
+              <td>{item.datainicio}</td>
+              <td>{item.horario}</td>
+              <td>{item.observacao}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </Pagina>
   );
 };

@@ -30,6 +30,8 @@ const index = () => {
     }
   }
 
+  
+
   return (
     <Pagina titulo="Exames">
 
@@ -40,9 +42,11 @@ const index = () => {
         <thead>
           <tr>
             <th>Apagar</th>
-            <th>Nome</th>
-            <th>Duração</th>
-            <th>Modalidade</th>
+            <th>Tipo de Exame</th>
+            <th>Id do Medico</th>
+            <th>Id do Paciente</th>
+            <th>data do exame</th>
+            <th>data do resultado</th>
           </tr>
         </thead>
         <tbody>
@@ -58,6 +62,8 @@ const index = () => {
               <td>{item.exame}</td>
               <td>{item.medicoId}</td>
               <td>{item.pacienteId}</td>
+              <td>{item.dataInicio}</td>
+              <td>{item.dataFim}</td>
             </tr>
           ))}
         </tbody>

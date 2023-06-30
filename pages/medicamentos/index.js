@@ -41,7 +41,10 @@ const index = () => {
           <tr>
             <th>Apagar</th>
             <th>Nome</th>
-            <th>curso</th>
+            <th>Codigo</th>
+            <th>Dosagem</th>
+            <th>Validade</th>
+            <th>Quantidade</th>
           </tr>
         </thead>
         <tbody>
@@ -55,7 +58,10 @@ const index = () => {
                 <FaRegTrashAlt onClick={()=>excluir(item.id)} className="text-danger" />
               </td>
               <td>{item.nome}</td>
-              <td>{item.curso}</td>
+              <td>{item.codigo}</td>
+              <td>{item.dosagem}</td>
+              <td>{item.validade}</td>
+              <td>{item.quantidade}</td>
             </tr>
           ))}
         </tbody>

@@ -8,6 +8,7 @@ import { BsCheckLg } from 'react-icons/bs'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import axios from 'axios'
 import validatorCadastro from '@/validators/validatorsCadastro'
+import { mask } from 'remask'
 
 const form = () => {
     const { push } = useRouter()
@@ -19,6 +20,14 @@ const form = () => {
     push('/exames')
 
 
+    }
+
+    function handlechange(event){
+      const name = event.target.name
+      const valor = event.target.value
+      const mascara = event.target.getAttribute('mask')
+
+      setValue(name, mask(valor, mascara));
     }
     
     return (
@@ -58,7 +67,8 @@ const form = () => {
 
                 <Form.Group className="mb-3" controlId="dataInicio">
                     <Form.Label>Data do exame:</Form.Label>
-                    <Form.Control type="text" {...register('dataInicio', validatorCadastro.dataInicio)}/>
+                    <Form.Control mask='99/99/9999' type="text" {...register('dataInicio', validatorCadastro.dataInicio)}
+                    onChange={handlechange}/>
                 </Form.Group>
                 {errors.dataInicio && (
                     <span className="error-message bg-dark text-danger">
@@ -68,7 +78,11 @@ const form = () => {
 
                 <Form.Group className="mb-3" controlId="dataFim">
                     <Form.Label>Data do resultado:</Form.Label>
-                    <Form.Control type="text" {...register('dataFim', validatorCadastro.dataFim)}/>
+                    <Form.Control
+                     mask='99/99/9999' 
+                     type="text" 
+                     {...register('dataFim', validatorCadastro.dataFim)}
+                    onChange={handlechange}/>
                 </Form.Group>
                 {errors.dataFim && (
                     <span className="error-message bg-dark text-danger">

@@ -45,7 +45,7 @@ const form = () => {
                 <Form.Group className="mb-3" controlId="pacienteid">
                     <Form.Label>Id do paciente:</Form.Label>
                     <Form.Control type="text" {...register('pacienteid', validatorCadastro.pacienteid)}
-                    onChange={handlechange} />
+                     />
                 </Form.Group>
                 {errors.pacienteid && (
                     <span className="error-message bg-dark text-danger">
@@ -65,7 +65,7 @@ const form = () => {
 
                 <Form.Group className="mb-3" controlId="datainicio">
                     <Form.Label>Data da consulta:</Form.Label>
-                    <Form.Control type="text" {...register('datainicio', validatorCadastro.datainicio)} />
+                    <Form.Control mask='99/99/9999' type="text" {...register('datainicio', validatorCadastro.datainicio)}  onChange={handlechange}/>
                 </Form.Group>
                 {errors.datainicio && (
                     <span className="error-message bg-dark text-danger">
@@ -87,7 +87,7 @@ const form = () => {
                 <Form.Group className="mb-3" controlId="observacao">
                     <Form.Label>Observação:</Form.Label>
                     <Form.Control as="textarea" rows={5} type="text" {...register('observacao', validatorCadastro.observacao)} 
-                    onChange={handlechange}/>
+                    />
                 </Form.Group>
                 {errors.observacao && (
                     <span className="error-message bg-dark text-danger">
